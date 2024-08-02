@@ -1,0 +1,64 @@
+.education {
+  width: 268px;
+}
+
+.education__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.education__list__item {
+  position: relative;
+  width: 116px;
+  height: fit-content;
+  padding: 8px;
+  border-radius: 10px;
+  background: var(--color-item-bg);
+  line-height: 150%;
+}
+
+.edu-period {
+  margin-bottom: 8px;
+}
+
+.tags {
+  color: var(--color-text-hashtag-green);
+}
+
+.institute {
+  margin-top: 8px;
+}
+
+.education__list__item h5 {
+  line-height: 150%;
+}
+
+.education__list__item:first-of-type {
+  background: var(--color-item-active-bg);
+  color: var(--color-text-main-light);
+}
+
+.education__list__item:first-of-type .tags {
+  color: var(--color-text-subtitle-light);
+}
+
+.education__list__item .like {
+  position: absolute;
+  right: 8px;
+  top: 10px;
+  width: 11px;
+  height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .education {
+    width: 100%;
+  }
+
+  .education__list {
+    justify-content: center;
+  }
+}

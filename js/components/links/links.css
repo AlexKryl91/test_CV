@@ -1,0 +1,16 @@
+.links {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.links h4 {
+  margin-bottom: 15px;
+}
+
+.links a,
+a:visited,
+a:active {
+  font-size: 10px;
+  line-height: 150%;
+  color: var(--color-text-main-light);
+}

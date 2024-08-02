@@ -1,0 +1,48 @@
+.languages {
+  width: 267px;
+}
+
+.languages__list {
+  list-style: none;
+}
+
+.languages__list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.languages__list li:last-of-type {
+  margin-bottom: 0;
+}
+
+.languages__list li:last-of-type .progress-bar__fill {
+  width: 75%;
+}
+
+.lang-name {
+  max-width: 124px;
+}
+
+.progress-bar {
+  width: 168px;
+  height: 11px;
+}
+
+.progress-bar__fill {
+  width: 100%;
+  height: 100%;
+  background: var(--color-item-active-bg);
+  border-radius: 3px;
+}
+
+@media screen and (max-width: 600px) {
+  .languages {
+    width: 100%;
+  }
+
+  .progress-bar {
+    width: calc(100% - var(--inter-gap) - 114px);
+  }
+}

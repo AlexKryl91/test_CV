@@ -1,31 +1,20 @@
 import '../css/style.css';
-import javascriptLogo from '../src/img/javascript.svg';
-import viteLogo from '../src/img/vite.svg';
 
-document.querySelector('#app').innerHTML = '';
+import Photo from '/img/photo_sample.png';
 
-// document.querySelector('#app').innerHTML = `
-//   <main class="main">
-//     <h1 class="visually-hidden">UX/UI Desinger CV Webpage</h1>
-//     <div class="top-block">
-//       <img class="photo" src="../src/img/photo_samlpe.png" alt="My Photo" />
-//       <section class="container itroduction"></section>
-//       <section class="container languages"></section>
-//     </div>
-//     <div class="middle-block">
-//       <section class="container experiance"></section>
-//       <section class="tools"></section>
-//     </div>
-//     <div class="bottom-block">
-//       <section class="container education"></section>
-//       <section class="container interests"></section>
-//       <section class="container-dark links"></section>
-//     </div>
-//   </main>
-// `;
+import Education from './components/education/education';
+import Experience from './components/experience/experience';
+import Header from './components/header/header';
+import Interests from './components/interests/interests';
+import Introduction from './components/introduction/introduction';
+import Languages from './components/languages/languages';
+import Links from './components/links/links';
+
+import IconGroups from './components/tools/icons_groups';
+import Tools from './components/tools/tools';
 
 const AppData = {
-  into: {
+  intro: {
     greetings: 'Hello 👋🏻 I’m',
     name: 'Karthik SR',
     profession: 'UX/UI Designer',
@@ -77,14 +66,15 @@ const AppData = {
   },
   tools: {
     caption: 'Tools',
+    groups: IconGroups,
   },
   education: {
     caption: 'Education',
     list: [
       {
-        period: '2023',
+        period: { start: '2023', end: '' },
         speciality: 'UI/UX',
-        skils: [
+        skills: [
           'UX',
           'UI',
           'research',
@@ -98,35 +88,61 @@ const AppData = {
         like: true,
       },
       {
-        period: '2017 - 2022',
+        period: { start: '2017', end: '2022' },
         speciality: 'Law',
-        skils: ['law', 'legalStudies', 'contracts', 'internationalLaws'],
+        skills: ['law', 'legalStudies', 'contracts', 'internationalLaws'],
         institution: 'University of Kerala',
         like: false,
       },
       {
-        period: '2017',
+        period: { start: '2017', end: '' },
         speciality: 'Graphic design',
-        skils: ['branding', 'web', 'illustration', 'adobe'],
+        skills: ['branding', 'web', 'illustration', 'adobe'],
         institution: 'Coursrea',
         like: false,
       },
     ],
   },
-  interests: [
-    'branding',
-    'design',
-    'photography',
-    'artifical intelligence',
-    'illustration',
-    'typography',
-    'social networks',
-    'research',
-    'dron pilot',
-    'games',
-  ],
+  interests: {
+    caption: 'Interests',
+    list: [
+      'branding',
+      'design',
+      'photography',
+      'artifical intelligence',
+      'illustration',
+      'typography',
+      'social networks',
+      'research',
+      'dron pilot',
+      'games',
+    ],
+  },
   links: {
     caption: 'Let´s chat! I´m ready to work on excinting projects',
     eMail: 'srkarthik.designscape@gmail.com',
   },
 };
+
+document.querySelector('#app').innerHTML = `
+    ${Header()}
+    <main class="main">
+      <h1 class="visually-hidden">UX/UI Desinger CV Webpage</h1>
+      <div class="top-block">
+        <img class="photo" src="${Photo}" alt="My Photo" />
+        ${Introduction(AppData.intro)}
+        ${Languages(AppData.languages)}
+      </div>
+      <div class="middle-block">
+        ${Experience(AppData.experience)}
+        ${Tools(AppData.tools)}
+      </div>
+      <div class="bottom-block">
+        ${Education(AppData.education)}
+        <div class="wrapper">
+        ${Interests(AppData.interests)}
+        ${Links(AppData.links)}
+        </div>
+      </div>
+    </main>
+`;

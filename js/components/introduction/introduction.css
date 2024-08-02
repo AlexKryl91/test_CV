@@ -1,0 +1,16 @@
+.introduction {
+  width: 124px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.introduction h2 {
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .introduction {
+    width: calc(100% - var(--inter-gap) - 124px);
+  }
+}

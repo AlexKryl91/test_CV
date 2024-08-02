@@ -1,0 +1,18 @@
+.header {
+  background: var(--color-main-bg);
+  width: 100%;
+  max-width: 595px;
+  margin: auto;
+  padding: 15px 20px;
+  text-align: right;
+  border-bottom: 2px solid var(--color-default-bg);
+}
+
+.download-btn {
+  height: 30px;
+  padding-inline: 14px;
+  font-size: 14px;
+  color: var(--color-text-main-light);
+  border-radius: 6px;
+  background: var(--color-item-active-bg);
+}
