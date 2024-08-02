@@ -1,0 +1,37 @@
+:root {
+  /* main colors */
+  --color-main-bg: #fff;
+  --color-container-bg: #f0f0f0;
+  --color-item-bg: #fff;
+  --color-item-active-bg: #28d979;
+
+  /* text colors */
+  --color-text-main-dark: #000;
+  --color-text-prof-dark: #5c5c5c;
+  --color-text-subtitle-dark: #3f3d3d;
+
+  --color-text-main-light: #fff;
+  --color-text-subtitle-light: #ebf9f2;
+
+  --color-text-hashtag-green: #149063;
+  --color-text-hashtag-white: #ebf9f2;
+
+  --color-text-mark: #ddf163;
+  --color-text-like: #f6ed1e;
+
+  --color-text-link: #dddddd;
+
+  /* elements colors */
+  --color-mark-tr: rgba(126, 115, 18, 0.4);
+
+  /* fonts */
+  --font-family-base: 'Poppins', Arial, Helvetica, Verdana, sans-serif;
+
+  /* common style */
+  --container-padding: 12px;
+  --border-radius: 12px;
+  --inter-margin: 20px;
+
+  /* for effects */
+  --transition-duration: 0.3s;
+}
