@@ -16,7 +16,7 @@
             `).join("")}
           </ul>
         </section> 
-    `,g=({caption:i,list:s})=>`
+    `,d=({caption:i,list:s})=>`
           <section class="container experience">
           <h4>${i}</h4>
           <ul class="experience__list">
@@ -43,11 +43,11 @@
                       
           </ul>
         </section>
-  `,d=()=>`
+  `,g="/test_CV/pdf/test_cv.pdf",u=()=>`
     <header class="header">
-      <button class="download-btn" type="button">Download PDF</button>
+      <a class="download-btn" href="${g}" download>Download PDF</a>
     </header>
-  `,u=({caption:i,list:s})=>`
+  `,m=({caption:i,list:s})=>`
   <section class="container interests">
             <h4>${i}</h4>
             <ul class="interests__list">
@@ -56,7 +56,7 @@
                 `).join("")}
             </ul>
           </section>
-  `,m=({greetings:i,name:s,profession:e})=>`
+  `,h=({greetings:i,name:s,profession:e})=>`
         <section class="container introduction">
           <h5>${i}</h5>
           <div>
@@ -64,7 +64,7 @@
             <h3>${e}</h3>
           </div>
         </section>
-`,h=({caption:i,list:s})=>`
+`,f=({caption:i,list:s})=>`
         <section class="container languages">
           <h4>${i}</h4>
           <ul class="languages__list">
@@ -78,14 +78,14 @@
             `).join("")}
           </ul>
         </section>
-  `,f=({caption:i,eMail:s})=>`
+  `,v=({caption:i,eMail:s})=>`
   <section class="container-dark links">
             <h4>${i}</h4>
             <a href="mailto: ${s}"
               >${s}</a
             >
           </section>
-`,v="/test_CV/img/figma.svg",$="/test_CV/img/photoshop.svg",w="/test_CV/img/illustrator.svg",_="/test_CV/img/premiere.svg",b="/test_CV/img/notion.svg",y="/test_CV/img/google_meet.svg",k="/test_CV/img/zapier.svg",C="/test_CV/img/webflow.svg",j="/test_CV/img/framer.svg",L="/test_CV/img/wordpress.svg",V="/test_CV/img/chat_gpt.svg",P="/test_CV/img/copilot.svg",I="/test_CV/img/midjourney.svg",U=[{caption:"design",icons:[{svg:v,ref:"https://www.figma.com/"},{svg:$,ref:"https://www.adobe.com/ru/products/photoshop.html"},{svg:w,ref:"https://www.adobe.com/"},{svg:_,ref:"https://www.adobe.com/"},{svg:b,ref:"https://www.notion.so/"},{svg:y,ref:"https://meet.google.com/landing"}]},{caption:"no-code",icons:[{svg:k,ref:"https://zapier.com/"},{svg:C,ref:"https://webflow.com/"},{svg:j,ref:"https://www.framer.com/"},{svg:L,ref:"https://wordpress.com/"}]},{caption:"artificial intelligence",icons:[{svg:V,ref:"https://chatgpt.com/"},{svg:P,ref:"https://copilot.microsoft.com/"},{svg:I,ref:"https://www.midjourney.com/home"}]}],x=({caption:i,groups:s})=>(console.log(i,s),`
+`,$="/test_CV/img/figma.svg",_="/test_CV/img/photoshop.svg",w="/test_CV/img/illustrator.svg",b="/test_CV/img/premiere.svg",y="/test_CV/img/notion.svg",C="/test_CV/img/google_meet.svg",k="/test_CV/img/zapier.svg",j="/test_CV/img/webflow.svg",L="/test_CV/img/framer.svg",V="/test_CV/img/wordpress.svg",P="/test_CV/img/chat_gpt.svg",I="/test_CV/img/copilot.svg",U="/test_CV/img/midjourney.svg",x=[{caption:"design",icons:[{svg:$,ref:"https://www.figma.com/"},{svg:_,ref:"https://www.adobe.com/ru/products/photoshop.html"},{svg:w,ref:"https://www.adobe.com/"},{svg:b,ref:"https://www.adobe.com/"},{svg:y,ref:"https://www.notion.so/"},{svg:C,ref:"https://meet.google.com/landing"}]},{caption:"no-code",icons:[{svg:k,ref:"https://zapier.com/"},{svg:j,ref:"https://webflow.com/"},{svg:L,ref:"https://www.framer.com/"},{svg:V,ref:"https://wordpress.com/"}]},{caption:"artificial intelligence",icons:[{svg:P,ref:"https://chatgpt.com/"},{svg:I,ref:"https://copilot.microsoft.com/"},{svg:U,ref:"https://www.midjourney.com/home"}]}],N=({caption:i,groups:s})=>(console.log(i,s),`
       <section class="container tools">
             <h4>${i}</h4>
             <ul class="tools__list">
@@ -101,24 +101,24 @@
                 `).join("")}
             </ul>
           </section>
-      `),a={intro:{greetings:"Hello 👋🏻 I’m",name:"Karthik SR",profession:"UX/UI Designer"},languages:{caption:"Languages",list:[{language:"English",level:4},{language:"Malayalam",level:4},{language:"Hindi",level:3}]},experience:{caption:"Experience",list:[{period:"Jun. 2023 - Present",position:"Marketing Manager",company:"Pankayam",jobNote:"Full-time",functions:["Strategy development and planning of campaigns that promote the business and generate genuine traffic","SEO Content Creation for Blogs, Website, Social media"]},{period:"2017 - Present",position:"Graphic / Web designer",company:"Freelance",jobNote:"",functions:["Development of internal projects from scratch, product design of brands","Landing page, webapps and hybrid apps","Coordinating with outside agencies, art services, web designer, marketing, printers, and colleagues as necessary."]},{period:"Sep. 2021 - Jun. 2023",position:"Legal Assistant",company:"Law Firm",jobNote:"Intern",functions:["Provide administrative support to lawyer and enhance office effectiveness","Handle communication with clients, witnesses etc.","Repare case briefs and summarize depositions, interrogatories and testimony"]}]},tools:{caption:"Tools",groups:U},education:{caption:"Education",list:[{period:{start:"2023",end:""},speciality:"UI/UX",skills:["UX","UI","research","DesignSysytem","Ui","wireframing","figma","Ux"],institution:"Coursera",like:!0},{period:{start:"2017",end:"2022"},speciality:"Law",skills:["law","legalStudies","contracts","internationalLaws"],institution:"University of Kerala",like:!1},{period:{start:"2017",end:""},speciality:"Graphic design",skills:["branding","web","illustration","adobe"],institution:"Coursrea",like:!1}]},interests:{caption:"Interests",list:["branding","design","photography","artifical intelligence","illustration","typography","social networks","research","dron pilot","games"]},links:{caption:"Let´s chat! I´m ready to work on excinting projects",eMail:"srkarthik.designscape@gmail.com"}};document.querySelector("#app").innerHTML=`
-    ${d()}
+      `),a={intro:{greetings:"Hello 👋🏻 I’m",name:"Karthik SR",profession:"UX/UI Designer"},languages:{caption:"Languages",list:[{language:"English",level:4},{language:"Malayalam",level:4},{language:"Hindi",level:3}]},experience:{caption:"Experience",list:[{period:"Jun. 2023 - Present",position:"Marketing Manager",company:"Pankayam",jobNote:"Full-time",functions:["Strategy development and planning of campaigns that promote the business and generate genuine traffic","SEO Content Creation for Blogs, Website, Social media"]},{period:"2017 - Present",position:"Graphic / Web designer",company:"Freelance",jobNote:"",functions:["Development of internal projects from scratch, product design of brands","Landing page, webapps and hybrid apps","Coordinating with outside agencies, art services, web designer, marketing, printers, and colleagues as necessary."]},{period:"Sep. 2021 - Jun. 2023",position:"Legal Assistant",company:"Law Firm",jobNote:"Intern",functions:["Provide administrative support to lawyer and enhance office effectiveness","Handle communication with clients, witnesses etc.","Repare case briefs and summarize depositions, interrogatories and testimony"]}]},tools:{caption:"Tools",groups:x},education:{caption:"Education",list:[{period:{start:"2023",end:""},speciality:"UI/UX",skills:["UX","UI","research","DesignSysytem","Ui","wireframing","figma","Ux"],institution:"Coursera",like:!0},{period:{start:"2017",end:"2022"},speciality:"Law",skills:["law","legalStudies","contracts","internationalLaws"],institution:"University of Kerala",like:!1},{period:{start:"2017",end:""},speciality:"Graphic design",skills:["branding","web","illustration","adobe"],institution:"Coursrea",like:!1}]},interests:{caption:"Interests",list:["branding","design","photography","artifical intelligence","illustration","typography","social networks","research","dron pilot","games"]},links:{caption:"Let´s chat! I´m ready to work on excinting projects",eMail:"srkarthik.designscape@gmail.com"}};document.querySelector("#app").innerHTML=`
+    ${u()}
     <main class="main">
       <h1 class="visually-hidden">UX/UI Desinger CV Webpage</h1>
       <div class="top-block">
         <img class="photo" src="${c}" alt="My Photo" />
-        ${m(a.intro)}
-        ${h(a.languages)}
+        ${h(a.intro)}
+        ${f(a.languages)}
       </div>
       <div class="middle-block">
-        ${g(a.experience)}
-        ${x(a.tools)}
+        ${d(a.experience)}
+        ${N(a.tools)}
       </div>
       <div class="bottom-block">
         ${p(a.education)}
         <div class="wrapper">
-        ${u(a.interests)}
-        ${f(a.links)}
+        ${m(a.interests)}
+        ${v(a.links)}
         </div>
       </div>
     </main>
