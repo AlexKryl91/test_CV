@@ -1,9 +1,11 @@
 import './header.css';
 
+import PDF from '/pdf/test_cv.pdf';
+
 const Header = () => {
   return `
     <header class="header">
-      <button class="download-btn" type="button">Download PDF</button>
+      <a class="download-btn" href="${PDF}" download>Download PDF</a>
     </header>
   `;
 };
