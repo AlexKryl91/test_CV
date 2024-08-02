@@ -1,5 +1,7 @@
 :root {
   /* main colors */
+
+  --color-default-bg: #f0f0f0;
   --color-main-bg: #fff;
   --color-container-bg: #f0f0f0;
   --color-item-bg: #fff;
@@ -30,7 +32,7 @@
   /* common style */
   --container-padding: 12px;
   --border-radius: 12px;
-  --inter-margin: 20px;
+  --inter-gap: 20px;
 
   /* for effects */
   --transition-duration: 0.3s;

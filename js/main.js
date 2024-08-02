@@ -1,24 +1,28 @@
 import '../css/style.css';
-import javascriptLogo from '../javascript.svg';
-import viteLogo from '/vite.svg';
+import javascriptLogo from '../src/img/javascript.svg';
+import viteLogo from '../src/img/vite.svg';
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`;
+document.querySelector('#app').innerHTML = '';
+
+// document.querySelector('#app').innerHTML = `
+//   <main class="main">
+//     <h1 class="visually-hidden">UX/UI Desinger CV Webpage</h1>
+//     <div class="top-block">
+//       <img class="photo" src="../src/img/photo_samlpe.png" alt="My Photo" />
+//       <section class="container itroduction"></section>
+//       <section class="container languages"></section>
+//     </div>
+//     <div class="middle-block">
+//       <section class="container experiance"></section>
+//       <section class="tools"></section>
+//     </div>
+//     <div class="bottom-block">
+//       <section class="container education"></section>
+//       <section class="container interests"></section>
+//       <section class="container-dark links"></section>
+//     </div>
+//   </main>
+// `;
 
 const AppData = {
   into: {
@@ -46,7 +50,6 @@ const AppData = {
           'Strategy development and planning of campaigns that promote the business and generate genuine traffic',
           'SEO Content Creation for Blogs, Website, Social media',
         ],
-        recent: true,
       },
       {
         period: '2017 - Present',
@@ -58,7 +61,6 @@ const AppData = {
           'Landing page, webapps and hybrid apps',
           'Coordinating with outside agencies, art services, web designer, marketing, printers, and colleagues as necessary.',
         ],
-        recent: false,
       },
       {
         period: 'Sep. 2021 - Jun. 2023',
@@ -70,7 +72,6 @@ const AppData = {
           'Handle communication with clients, witnesses etc.',
           'Repare case briefs and summarize depositions, interrogatories and testimony',
         ],
-        recent: false,
       },
     ],
   },
