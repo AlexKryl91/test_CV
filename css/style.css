@@ -37,6 +37,25 @@ h5 {
   font-weight: 500;
 }
 
+.header {
+  background: var(--color-main-bg);
+  width: 100%;
+  max-width: 595px;
+  margin: auto;
+  padding: 15px 20px;
+  text-align: right;
+  border-bottom: 2px solid var(--color-default-bg);
+}
+
+.download-btn {
+  height: 30px;
+  padding-inline: 14px;
+  font-size: 14px;
+  color: var(--color-text-main-light);
+  border-radius: 6px;
+  background: var(--color-item-active-bg);
+}
+
 .main {
   width: 100%;
   max-width: 595px;
@@ -116,6 +135,14 @@ h5 {
 
 .languages__list li:last-of-type {
   margin-bottom: 0;
+}
+
+.languages__list li:last-of-type .progress-bar__fill {
+  width: 75%;
+}
+
+.lang-name {
+  max-width: 124px;
 }
 
 .progress-bar {
@@ -207,9 +234,56 @@ h5 {
 .tools {
   /* padding-inline: 24px; */
 }
+
 .tools__list {
   list-style: none;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tools__list__item {
+  position: relative;
+  margin-inline: auto;
+  padding: 16px 4px;
+  width: 76px;
+  background: var(--color-item-bg);
+  border-radius: 6px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.group-caption {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  width: fit-content;
+  height: 11px;
+  padding: 2px 6px 0;
+  font-size: 5px;
+  color: var(--color-text-main-light);
+  line-height: 142%;
+  background-color: var(--color-text-main-dark);
+  border-radius: 60px;
+}
+
+.svg-wrapper {
+  margin-inline: auto;
+  background: red;
+  width: 20px;
+  height: 20px;
+}
+
+.svg-wrapper svg {
+  width: 100%;
+  height: 100%;
 }
 
 /*  */
@@ -256,6 +330,10 @@ h5 {
 
 .institute {
   margin-top: 8px;
+}
+
+.education__list__item h5 {
+  line-height: 150%;
 }
 
 .education__list__item:first-of-type {
@@ -306,10 +384,57 @@ h5 {
   width: 100%;
 }
 
+.links h4 {
+  margin-bottom: 15px;
+}
+
 .links a,
 a:visited,
 a:active {
   font-size: 10px;
   line-height: 150%;
   color: var(--color-text-main-light);
+}
+
+@media screen and (max-width: 600px) {
+  .introduction {
+    width: calc(100% - var(--inter-gap) - 124px);
+  }
+
+  .languages {
+    width: 100%;
+  }
+
+  .progress-bar {
+    width: calc(100% - var(--inter-gap) - 114px);
+  }
+
+  .experience {
+    width: 100%;
+  }
+
+  .tools {
+    width: 100%;
+  }
+
+  .tools__list {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .tools__list__item {
+    margin-inline: 0;
+  }
+
+  .education {
+    width: 100%;
+  }
+
+  .education__list {
+    justify-content: center;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
 }
