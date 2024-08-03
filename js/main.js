@@ -60,36 +60,30 @@ const saveBtn = document.querySelector('.save-btn');
 const cancelBtn = document.querySelector('.cancel-btn');
 const editableNodes = document.querySelectorAll('.editable');
 
-editBtn.addEventListener('click', () => {
+function buttonsToggleClass(isEditable) {
   saveBtn.classList.toggle('hidden');
   editBtn.classList.toggle('hidden');
   cancelBtn.classList.toggle('hidden');
   for (const section of sections) {
-    section.classList.add('container_active');
+    section.classList.toggle('container_active');
   }
   for (const editableNode of editableNodes) {
-    editableNode.setAttribute('contenteditable', true);
+    editableNode.setAttribute('contenteditable', isEditable);
   }
+}
+
+editBtn.addEventListener('click', () => {
+  buttonsToggleClass(true);
 });
 
 saveBtn.addEventListener('click', () => {
-  saveBtn.classList.toggle('hidden');
-  editBtn.classList.toggle('hidden');
-  cancelBtn.classList.toggle('hidden');
-  for (const section of sections) {
-    section.classList.remove('container_active');
-  }
-  for (const editableNode of editableNodes) {
-    editableNode.setAttribute('contenteditable', false);
-  }
+  buttonsToggleClass(false);
   localStorage.setItem('_cvData', JSON.stringify(Application.innerHTML));
 });
 
 cancelBtn.addEventListener('click', () => {
-  saveBtn.classList.toggle('hidden');
-  editBtn.classList.toggle('hidden');
-  cancelBtn.classList.toggle('hidden');
-  window.location.reload();
+  buttonsToggleClass(false);
+  setTimeout(() => window.location.reload(), 200);
 });
 
 // Cancel with "Esc" key
@@ -98,9 +92,7 @@ document.addEventListener('keyup', (event) => {
     event.key === 'Escape' &&
     editBtn.className.split(' ').includes('hidden')
   ) {
-    saveBtn.classList.toggle('hidden');
-    editBtn.classList.toggle('hidden');
-    cancelBtn.classList.toggle('hidden');
-    window.location.reload();
+    buttonsToggleClass(false);
+    setTimeout(() => window.location.reload(), 200);
   }
 });
