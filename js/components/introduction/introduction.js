@@ -5,7 +5,7 @@ const Introduction = ({ greetings, name, profession }) => {
         <section class="container introduction">
           <h5>${greetings}</h5>
           <div>
-            <h2>${name}</h2>
+            <h2 contenteditable="true">${name}</h2>
             <h3>${profession}</h3>
           </div>
         </section>

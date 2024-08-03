@@ -18,32 +18,32 @@ const IconGroups = [
   {
     caption: 'design',
     icons: [
-      { svg: Figma, ref: 'https://www.figma.com/' },
+      { path: Figma, ref: 'https://www.figma.com/' },
       {
-        svg: Photoshop,
+        path: Photoshop,
         ref: 'https://www.adobe.com/ru/products/photoshop.html',
       },
-      { svg: Illustrator, ref: 'https://www.adobe.com/' },
-      { svg: Premiere, ref: 'https://www.adobe.com/' },
-      { svg: Notion, ref: 'https://www.notion.so/' },
-      { svg: GoogleMeet, ref: 'https://meet.google.com/landing' },
+      { path: Illustrator, ref: 'https://www.adobe.com/' },
+      { path: Premiere, ref: 'https://www.adobe.com/' },
+      { path: Notion, ref: 'https://www.notion.so/' },
+      { path: GoogleMeet, ref: 'https://meet.google.com/landing' },
     ],
   },
   {
     caption: 'no-code',
     icons: [
-      { svg: Zapier, ref: 'https://zapier.com/' },
-      { svg: Webflow, ref: 'https://webflow.com/' },
-      { svg: Framer, ref: 'https://www.framer.com/' },
-      { svg: WordPress, ref: 'https://wordpress.com/' },
+      { path: Zapier, ref: 'https://zapier.com/' },
+      { path: Webflow, ref: 'https://webflow.com/' },
+      { path: Framer, ref: 'https://www.framer.com/' },
+      { path: WordPress, ref: 'https://wordpress.com/' },
     ],
   },
   {
     caption: 'artificial intelligence',
     icons: [
-      { svg: ChatGPT, ref: 'https://chatgpt.com/' },
-      { svg: Copilot, ref: 'https://copilot.microsoft.com/' },
-      { svg: Midjourney, ref: 'https://www.midjourney.com/home' },
+      { path: ChatGPT, ref: 'https://chatgpt.com/' },
+      { path: Copilot, ref: 'https://copilot.microsoft.com/' },
+      { path: Midjourney, ref: 'https://www.midjourney.com/home' },
     ],
   },
 ];

@@ -1,0 +1,71 @@
+.popup {
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 20px;
+  padding: 20px;
+
+  background: var(--color-container-bg);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  animation: move-in 0.3s ease;
+}
+
+.popup::backdrop {
+  background: rgba(25, 45, 70, 0.6);
+  backdrop-filter: blur(3px);
+  animation: fade-in 0.3s;
+}
+
+.popup-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--inter-gap);
+}
+
+.modal-content {
+  /* background: teal; */
+  /*  */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.label-text {
+  font-size: 12px;
+  margin: 0 0 4px 4px;
+}
+
+.modal-content input {
+  margin-bottom: 10px;
+  padding: 4px 8px;
+}
+
+.apply-btn,
+.cancel-btn {
+  height: 32px;
+  width: 80px;
+  font-size: 14px;
+  color: var(--color-text-main-light);
+  border-radius: 6px;
+  background: var(--color-item-active-bg);
+}
+
+@keyframes move-in {
+  0% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

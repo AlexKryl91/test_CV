@@ -12,9 +12,10 @@ import Links from './components/links/links';
 
 import IconGroups from './components/tools/icons_groups';
 import Tools from './components/tools/tools';
+import ModalWindow from './components/modalWindow/modalWindow';
 
-const AppData = {
-  intro: {
+const defaultData = {
+  introduction: {
     greetings: 'Hello 👋🏻 I’m',
     name: 'Karthik SR',
     profession: 'UX/UI Designer',
@@ -22,9 +23,9 @@ const AppData = {
   languages: {
     caption: 'Languages',
     list: [
-      { language: 'English', level: 4 },
-      { language: 'Malayalam', level: 4 },
-      { language: 'Hindi', level: 3 },
+      { language: 'English', level: 100 },
+      { language: 'Malayalam', level: 100 },
+      { language: 'Hindi', level: 75 },
     ],
   },
   experience: {
@@ -124,25 +125,93 @@ const AppData = {
   },
 };
 
-document.querySelector('#app').innerHTML = `
+let data = defaultData;
+
+// ====== Check for CV data in LocalStorage ======>
+if (localStorage.getItem('_cvData')) {
+  data = JSON.parse(localStorage.getItem('_cvData'));
+} else {
+  localStorage.setItem('_cvData', JSON.stringify(data));
+}
+
+const Application = document.querySelector('#app');
+
+Application.innerHTML = `
     ${Header()}
     <main class="main">
       <h1 class="visually-hidden">UX/UI Desinger CV Webpage</h1>
       <div class="top-block">
         <img class="photo" src="${Photo}" alt="My Photo" />
-        ${Introduction(AppData.intro)}
-        ${Languages(AppData.languages)}
+        ${Introduction(data.introduction)}
+        ${Languages(data.languages)}
       </div>
       <div class="middle-block">
-        ${Experience(AppData.experience)}
-        ${Tools(AppData.tools)}
+        ${Experience(data.experience)}
+        ${Tools(data.tools)}
       </div>
       <div class="bottom-block">
-        ${Education(AppData.education)}
+        ${Education(data.education)}
         <div class="wrapper">
-        ${Interests(AppData.interests)}
-        ${Links(AppData.links)}
+        ${Interests(data.interests)}
+        ${Links(data.links)}
         </div>
       </div>
     </main>
+    <button type="button" id="TEST">TEST</button>
+    ${ModalWindow()}
 `;
+
+const modalWindow = document.querySelector('.popup');
+const modalContent = modalWindow.querySelector('.modal-content');
+const modalCancelBtn = modalWindow.querySelector('.cancel-btn');
+const modalApplyBtn = modalWindow.querySelector('.apply-btn');
+
+modalCancelBtn.addEventListener('click', () => {
+  modalWindow.close();
+});
+
+document.addEventListener('click', (event) => {
+  let node = event.target.closest('section');
+  if (node) {
+    let currentSectionClass = node.classList[node.classList.length - 1];
+
+    // modalContent.innerHTML = `${variableModalContent[currentSectionClass]}`;
+
+    // modalWindow.showModal();
+  }
+});
+
+// All inputs for editing
+const greetingsInput = document.querySelector('#greetings');
+const nameInput = document.querySelector('#name');
+const professionInput = document.querySelector('#profession');
+
+const lang1Input = document.querySelector('#language1');
+const lang2Input = document.querySelector('#language2');
+const lang3Input = document.querySelector('#language3');
+
+const lang1LevelInput = document.querySelector('#lang1-level');
+const lang2LevelInput = document.querySelector('#lang2-level');
+const lang3LevelInput = document.querySelector('#lang3-level');
+
+// Application of new information
+modalApplyBtn.addEventListener('click', () => {
+  data.introduction.greetings = greetingsInput.value;
+  data.introduction.name = nameInput.value;
+  data.introduction.profession = professionInput.value;
+
+  data.languages.list[0].language = lang1Input.value;
+  data.languages.list[1].language = lang2Input.value;
+  data.languages.list[2].language = lang3Input.value;
+
+  data.languages.list[0].level = lang1LevelInput.value;
+  data.languages.list[1].level = lang2LevelInput.value;
+  data.languages.list[2].level = lang3LevelInput.value;
+
+  localStorage.setItem('_cvData', JSON.stringify(data));
+  modalWindow.close();
+  // setTimeout(() => window.location.reload(), 300);
+});
+
+const testBTN = document.querySelector('#TEST');
+testBTN.addEventListener('click', () => console.log(Application.innerHTML));

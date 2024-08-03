@@ -1,7 +1,6 @@
 import './tools.css';
 
 const Tools = ({ caption, groups }) => {
-  console.log(caption, groups);
   return `
       <section class="container tools">
             <h4>${caption}</h4>
@@ -15,7 +14,7 @@ const Tools = ({ caption, groups }) => {
                     .map(
                       (icon) => `
                     <a href="${icon.ref}" target="_blank">
-                      <img class="tools-img" src="${icon.svg}" alt="Tool icon">
+                      <img class="tools-img" src="${icon.path}" alt="Tool icon">
                     </a>
                     `
                     )
