@@ -1,6 +1,6 @@
 import './languages.css';
 
-const Languages = ({ caption, list }) => {
+const Languages = ({ caption, list }, imgPath) => {
   const levels = {
     25: 'level-25',
     50: 'level-50',
@@ -10,13 +10,14 @@ const Languages = ({ caption, list }) => {
 
   return `
         <section class="container languages">
-          <h4>${caption}</h4>
+        <img class="edit-icon" src="${imgPath}" alt="Edit icon">
+          <h4 class="editable">${caption}</h4>
           <ul class="languages__list">
           ${list
             .map(
               (item) => `
             <li>
-              <h5 class="lang-name">${item.language}</h5>
+              <h5 class="editable lang-name">${item.language}</h5>
               <div class="progress-bar">
                 <div class="progress-bar__fill ${levels[item.level]}"></div>
               </div>

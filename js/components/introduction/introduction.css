@@ -9,7 +9,7 @@
   margin-bottom: 10px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 612px) {
   .introduction {
     width: calc(100% - var(--inter-gap) - 124px);
   }

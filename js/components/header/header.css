@@ -1,17 +1,52 @@
 .header {
   background: var(--color-main-bg);
+  /* background: teal; */
   width: 100%;
   max-width: 595px;
   margin: auto;
   padding: 22px 20px;
-  text-align: right;
   border-bottom: 2px solid var(--color-default-bg);
+
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  column-gap: 12px;
 }
 
-.download-btn {
-  padding: 5px 14px;
+.btn-wrapper {
+  position: relative;
+  width: 60px;
+}
+
+.btn {
+  height: 32px;
   font-size: 14px;
   color: var(--color-text-main-light);
   border-radius: 6px;
   background: var(--color-item-active-bg);
+  transition: var(--transition-duration);
+}
+
+.btn:hover {
+  background: #149063;
+}
+
+.edit-btn,
+.save-btn {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cancel-btn {
+  width: 80px;
+}
+
+.download-btn {
+  padding: 9px 14px 0;
+}
+
+.hidden {
+  display: none;
 }

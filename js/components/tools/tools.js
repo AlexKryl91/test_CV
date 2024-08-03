@@ -1,15 +1,16 @@
 import './tools.css';
 
-const Tools = ({ caption, groups }) => {
+const Tools = ({ caption, groups }, imgPath) => {
   return `
       <section class="container tools">
-            <h4>${caption}</h4>
+      <img class="edit-icon" src="${imgPath}" alt="Edit icon">
+            <h4 class="editable">${caption}</h4>
             <ul class="tools__list">
             ${groups
               .map(
                 (item) => `
                 <li class="tools__list__item">
-                  <div class="group-caption">${item.caption}</div>
+                  <div class="editable group-caption">${item.caption}</div>
                   ${item.icons
                     .map(
                       (icon) => `

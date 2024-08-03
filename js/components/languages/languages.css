@@ -45,7 +45,7 @@
   width: 100%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 612px) {
   .languages {
     width: 100%;
   }

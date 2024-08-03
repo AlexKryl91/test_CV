@@ -1,22 +1,27 @@
 import './experience.css';
 
-const Experience = ({ caption, list }) => {
+const Experience = ({ caption, list }, imgPath) => {
   return `
           <section class="container experience">
-          <h4>${caption}</h4>
+          <img class="edit-icon" src="${imgPath}" alt="Edit icon">
+          <h4 class="editable">${caption}</h4>
           <ul class="experience__list">
           ${list
             .map(
               (item, i) => `
             <li class="experience__list__item">
-              ${i === 0 ? '<div class="recent-label">most recent</div>' : ''}
-              <p class="work-period">
+              ${
+                i === 0
+                  ? '<div class="editable recent-label">most recent</div>'
+                  : ''
+              }
+              <p class="editable work-period">
                 ${item.period}
               </p>
               <div class="description">
                 <div class="job">
-                  <h5>${item.position}</h5>
-                  <p class="company">${item.company}${
+                  <h5 class="editable">${item.position}</h5>
+                  <p class="editable company">${item.company}${
                 item.jobNote
                   ? `&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;${item.jobNote}`
                   : ''
@@ -26,7 +31,7 @@ const Experience = ({ caption, list }) => {
             ${item.functions
               .map(
                 (el) => `
-                <li>
+                <li class="editable">
             ${el}
                   </li>`
               )

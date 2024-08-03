@@ -47,18 +47,39 @@ h5 {
 }
 
 .container {
+  position: relative;
   min-width: 124px;
   min-height: 124px;
   padding: var(--container-padding);
   border-radius: var(--border-radius);
   background: var(--color-container-bg);
+
+  overflow: hidden;
+  transition: var(--transition-duration);
 }
 
-.container-dark {
-  padding: var(--container-padding);
-  border-radius: var(--border-radius);
+.container_dark {
+  min-height: 0;
   background: var(--color-text-main-dark);
   color: var(--color-text-main-light);
+}
+
+.edit-icon {
+  display: none;
+}
+
+.container_active {
+  background: rgb(158, 240, 198);
+  color: var(--color-text-main-dark);
+}
+
+.container_active .edit-icon {
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 14px;
+  height: 14px;
 }
 
 .top-block {
@@ -97,8 +118,24 @@ h5 {
   width: 267px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 612px) {
   .wrapper {
     width: 100%;
+  }
+}
+
+/* Ripple efffect */
+span.ripple {
+  position: absolute;
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: rgba(190, 255, 190, 0.6);
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
   }
 }

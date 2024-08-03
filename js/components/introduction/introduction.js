@@ -1,12 +1,13 @@
 import './introduction.css';
 
-const Introduction = ({ greetings, name, profession }) => {
+const Introduction = ({ greetings, name, profession }, imgPath) => {
   return `
         <section class="container introduction">
-          <h5>${greetings}</h5>
+          <img class="edit-icon" src="${imgPath}" alt="Edit icon">
+          <h5 class="editable">${greetings}</h5>
           <div>
-            <h2 contenteditable="true">${name}</h2>
-            <h3>${profession}</h3>
+            <h2 class="editable">${name}</h2>
+            <h3 class="editable">${profession}</h3>
           </div>
         </section>
 `;
