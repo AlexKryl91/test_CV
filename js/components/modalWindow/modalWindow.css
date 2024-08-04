@@ -1,6 +1,6 @@
 .popup {
   margin: auto;
-  width: 100%;
+  width: 90%;
   max-width: 600px;
   border-radius: 20px;
   padding: 20px;
@@ -24,26 +24,15 @@
   gap: var(--inter-gap);
 }
 
-.modal-content {
-  /* background: teal; */
-  /*  */
+.question {
   width: 100%;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
+  font-size: 16px;
+  line-height: 150%;
 }
 
-.label-text {
-  font-size: 12px;
-  margin: 0 0 4px 4px;
-}
-
-.modal-content input {
-  margin-bottom: 10px;
-  padding: 4px 8px;
-}
-
-.apply-btn,
-.cancel-btn {
+.yes-btn,
+.no-btn {
   height: 32px;
   width: 80px;
   font-size: 14px;

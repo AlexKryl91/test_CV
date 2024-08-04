@@ -1,7 +1,5 @@
 import './header.css';
 
-import PDF from '/pdf/test_cv.pdf';
-
 const Header = () => {
   return `
     <header class="header">

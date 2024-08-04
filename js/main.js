@@ -1,7 +1,7 @@
 import '../css/style.css';
+import initialData from './initialData';
 
 import Photo from '/img/photo_sample.png';
-
 import Pencil from '/img/pencil.svg';
 
 import Education from './components/education/education';
@@ -13,9 +13,10 @@ import Languages from './components/languages/languages';
 import Links from './components/links/links';
 import Tools from './components/tools/tools';
 
-import initialData from './initialData';
-
 import createRipple from './UI/rippleEffect';
+import createPdf from './utils/createPdf';
+
+import ModalWindow from './components/modalWindow/modalWindow';
 
 let appBody = `
     ${Header()}
@@ -38,6 +39,7 @@ let appBody = `
         </div>
       </div>
     </main>
+    ${ModalWindow()}
 `;
 
 if (sessionStorage.getItem('_cvData')) {
@@ -58,6 +60,7 @@ for (const section of sections) {
 const editBtn = document.querySelector('.edit-btn');
 const saveBtn = document.querySelector('.save-btn');
 const cancelBtn = document.querySelector('.cancel-btn');
+
 const editableNodes = document.querySelectorAll('.editable');
 
 function buttonsToggleClass(isEditable) {
@@ -100,60 +103,26 @@ document.addEventListener('keyup', (event) => {
 // Download PDF
 const downloadBtn = document.getElementById('download');
 const cvBody = document.getElementById('cv-body');
+// Modal window with question
+const modalPDF = document.querySelector('.popup');
+const yesBtn = document.querySelector('.yes-btn');
+const noBtn = document.querySelector('.no-btn');
 
 downloadBtn.addEventListener('click', () => {
-  console.log(
-    'window width',
-    window.innerWidth,
-    'window height',
-    window.innerHeight
-  );
-  console.log(
-    'CV body width',
-    cvBody.clientWidth,
-    'CV body height',
-    cvBody.clientHeight
-  );
-
-  let opt = {};
-
-  if (window.innerWidth <= 612) {
-    opt = {
-      margin: 0,
-      filename: 'test_CV.pdf',
-      image: { type: 'jpeg', quality: 1 },
-      html2canvas: {
-        scale: 2,
-        width: window.innerWidth,
-        height: window.innerHeight,
-      },
-      jsPDF: {
-        unit: 'px',
-        hotfixes: ['px_scaling'],
-        format: [cvBody.clientWidth, cvBody.clientHeight],
-        orientation: 'portrait',
-        putOnlyUsedFonts: true,
-      },
-    };
+  if (editBtn.className.split(' ').includes('hidden')) {
+    modalPDF.showModal();
   } else {
-    opt = {
-      margin: 0,
-      filename: 'test_CV.pdf',
-      image: { type: 'jpeg', quality: 1 },
-      html2canvas: {
-        scale: 2,
-        width: cvBody.clientWidth,
-        height: cvBody.clientHeight,
-        x: (window.innerWidth - cvBody.clientWidth) / 2,
-      },
-      jsPDF: {
-        unit: 'mm',
-        format: [210, 300],
-        orientation: 'portrait',
-        putOnlyUsedFonts: true,
-      },
-    };
+    createPdf(cvBody);
   }
+});
 
-  html2pdf().set(opt).from(cvBody).save();
+yesBtn.addEventListener('click', () => {
+  modalPDF.close();
+  buttonsToggleClass(false);
+  sessionStorage.setItem('_cvData', JSON.stringify(Application.innerHTML));
+  createPdf(cvBody);
+});
+
+noBtn.addEventListener('click', () => {
+  modalPDF.close();
 });

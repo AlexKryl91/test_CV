@@ -1,20 +1,16 @@
 export default function createRipple(event) {
-  const section = event.currentTarget;
+  const container = event.currentTarget;
 
   const circle = document.createElement('span');
-  const diameter = Math.min(section.clientWidth, section.clientHeight);
+  const diameter = Math.min(container.clientWidth, container.clientHeight);
   const radius = diameter / 2;
 
   circle.style.width = circle.style.height = `${diameter}px`;
-  circle.style.left = `${event.clientX - section.offsetLeft - radius}px`;
-  circle.style.top = `${event.clientY - section.offsetTop - radius}px`;
+  circle.style.left = `${event.clientX - container.offsetLeft - radius}px`;
+  circle.style.top = `${event.clientY - container.offsetTop - radius}px`;
   circle.classList.add('ripple');
 
-  const ripple = section.getElementsByClassName('ripple')[0];
+  container.appendChild(circle);
 
-  if (ripple) {
-    ripple.remove();
-  }
-
-  section.appendChild(circle);
+  setTimeout(() => container.querySelector('.ripple').remove(), 600);
 }
