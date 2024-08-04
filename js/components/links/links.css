@@ -11,6 +11,6 @@
 a:visited,
 a:active {
   font-size: 10px;
-  line-height: 150%;
+  line-height: var(--line-height-150);
   color: var(--color-text-main-light);
 }

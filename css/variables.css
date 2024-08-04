@@ -31,8 +31,11 @@
 
   /* common style */
   --container-padding: 12px;
+  --border-radius-item: 10px;
   --border-radius: 12px;
+  --border-radius-round: 40px;
   --inter-gap: 20px;
+  --line-height-150: 150%;
 
   /* for effects */
   --transition-duration: 0.3s;

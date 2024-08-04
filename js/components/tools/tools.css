@@ -1,6 +1,3 @@
-/* .tools {
-} */
-
 .tools__list {
   list-style: none;
   width: 100%;
@@ -42,7 +39,7 @@
   color: var(--color-text-main-light);
   line-height: 142%;
   background-color: var(--color-text-main-dark);
-  border-radius: 60px;
+  border-radius: var(--border-radius-round);
 }
 
 .tools-img {

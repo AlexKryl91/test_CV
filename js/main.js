@@ -19,6 +19,7 @@ import createPdf from './utils/createPdf';
 import ModalWindow from './components/modalWindow/modalWindow';
 
 let appBody = `
+    ${ModalWindow()}
     ${Header()}
     <main id="cv-body" class="main">
       <h1 class="visually-hidden">UX/UI Desinger CV Webpage</h1>
@@ -39,7 +40,7 @@ let appBody = `
         </div>
       </div>
     </main>
-    ${ModalWindow()}
+  
 `;
 
 if (sessionStorage.getItem('_cvData')) {
@@ -51,12 +52,12 @@ Application.innerHTML = appBody;
 
 const sections = document.querySelectorAll('.container');
 
-// Ripple Effect
+// Add Ripple Effect to sections
 for (const section of sections) {
   section.addEventListener('click', createRipple);
 }
 
-// Edit mode and Save CV
+// Edit mode and Save changes handling
 const editBtn = document.querySelector('.edit-btn');
 const saveBtn = document.querySelector('.save-btn');
 const cancelBtn = document.querySelector('.cancel-btn');
@@ -89,27 +90,24 @@ cancelBtn.addEventListener('click', () => {
   setTimeout(() => window.location.reload(), 200);
 });
 
-// Cancel with "Esc" key
+// Addition - Cancel with "Esc" key
 document.addEventListener('keyup', (event) => {
-  if (
-    event.key === 'Escape' &&
-    editBtn.className.split(' ').includes('hidden')
-  ) {
+  if (event.key === 'Escape' && editBtn.classList.contains('hidden')) {
     buttonsToggleClass(false);
     setTimeout(() => window.location.reload(), 200);
   }
 });
 
-// Download PDF
+// Download PDF handling
 const downloadBtn = document.getElementById('download');
 const cvBody = document.getElementById('cv-body');
-// Modal window with question
+// Modal window with action selection
 const modalPDF = document.querySelector('.popup');
 const yesBtn = document.querySelector('.yes-btn');
 const noBtn = document.querySelector('.no-btn');
 
 downloadBtn.addEventListener('click', () => {
-  if (editBtn.className.split(' ').includes('hidden')) {
+  if (editBtn.classList.contains('hidden')) {
     modalPDF.showModal();
   } else {
     createPdf(cvBody);

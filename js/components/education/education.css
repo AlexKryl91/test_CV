@@ -15,9 +15,9 @@
   width: 116px;
   height: fit-content;
   padding: 8px;
-  border-radius: 10px;
+  border-radius: var(--border-radius-item);
   background: var(--color-item-bg);
-  line-height: 150%;
+  line-height: var(--line-height-150);
 }
 
 .edu-period {
@@ -33,7 +33,7 @@
 }
 
 .education__list__item h5 {
-  line-height: 150%;
+  line-height: var(--line-height-150);
 }
 
 .education__list__item:first-of-type {

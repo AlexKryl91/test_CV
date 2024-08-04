@@ -13,8 +13,8 @@
 .interests__list__item {
   padding: 4px 10px 0;
   height: 23px;
-  border-radius: 40px;
+  border-radius: var(--border-radius-round);
   background: var(--color-item-bg);
-  line-height: 150%;
+  line-height: var(--line-height-150);
   font-size: 10px;
 }
