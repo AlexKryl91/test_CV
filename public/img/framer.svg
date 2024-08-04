@@ -1,5 +1,1 @@
-<svg width="13" height="20" viewBox="0 0 13 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.8632L6.5 12.8632L6.5 19.0537L0 12.8632Z" fill="#0055FF"/>
-<path d="M6.5 6.67267L0 6.67267L0 12.8632L13 12.8632L6.5 6.67267Z" fill="#00AAFF"/>
-<path d="M0 0.482216L6.5 6.6727L13 6.6727L13 0.482216L0 0.482216Z" fill="#88DDFF"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><defs><style>.a{fill:#05f;fill-rule:evenodd;}.b{fill:#0af;}.c{fill:#8df;}</style></defs><title>framer_new</title><path class="a" d="M3,13.3333h7V20Z"/><path class="b" d="M10,6.6666H3v6.6667H17Z"/><path class="c" d="M3,0l7,6.6667h7V0Z"/></svg>
