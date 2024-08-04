@@ -19,7 +19,7 @@ import createRipple from './UI/rippleEffect';
 
 let appBody = `
     ${Header()}
-    <main class="main">
+    <main id="cv-body" class="main">
       <h1 class="visually-hidden">UX/UI Desinger CV Webpage</h1>
       <div class="top-block">
         <img class="photo" src="${Photo}" alt="My Photo" />
@@ -40,8 +40,8 @@ let appBody = `
     </main>
 `;
 
-if (localStorage.getItem('_cvData')) {
-  appBody = JSON.parse(localStorage.getItem('_cvData'));
+if (sessionStorage.getItem('_cvData')) {
+  appBody = JSON.parse(sessionStorage.getItem('_cvData'));
 }
 
 const Application = document.querySelector('#app');
@@ -78,7 +78,7 @@ editBtn.addEventListener('click', () => {
 
 saveBtn.addEventListener('click', () => {
   buttonsToggleClass(false);
-  localStorage.setItem('_cvData', JSON.stringify(Application.innerHTML));
+  sessionStorage.setItem('_cvData', JSON.stringify(Application.innerHTML));
 });
 
 cancelBtn.addEventListener('click', () => {
@@ -95,4 +95,65 @@ document.addEventListener('keyup', (event) => {
     buttonsToggleClass(false);
     setTimeout(() => window.location.reload(), 200);
   }
+});
+
+// Download PDF
+const downloadBtn = document.getElementById('download');
+const cvBody = document.getElementById('cv-body');
+
+downloadBtn.addEventListener('click', () => {
+  console.log(
+    'window width',
+    window.innerWidth,
+    'window height',
+    window.innerHeight
+  );
+  console.log(
+    'CV body width',
+    cvBody.clientWidth,
+    'CV body height',
+    cvBody.clientHeight
+  );
+
+  let opt = {};
+
+  if (window.innerWidth <= 612) {
+    opt = {
+      margin: 0,
+      filename: 'test_CV.pdf',
+      image: { type: 'jpeg', quality: 1 },
+      html2canvas: {
+        scale: 2,
+        width: window.innerWidth,
+        height: window.innerHeight,
+      },
+      jsPDF: {
+        unit: 'px',
+        hotfixes: ['px_scaling'],
+        format: [cvBody.clientWidth, cvBody.clientHeight],
+        orientation: 'portrait',
+        putOnlyUsedFonts: true,
+      },
+    };
+  } else {
+    opt = {
+      margin: 0,
+      filename: 'test_CV.pdf',
+      image: { type: 'jpeg', quality: 1 },
+      html2canvas: {
+        scale: 2,
+        width: cvBody.clientWidth,
+        height: cvBody.clientHeight,
+        x: (window.innerWidth - cvBody.clientWidth) / 2,
+      },
+      jsPDF: {
+        unit: 'mm',
+        format: [210, 300],
+        orientation: 'portrait',
+        putOnlyUsedFonts: true,
+      },
+    };
+  }
+
+  html2pdf().set(opt).from(cvBody).save();
 });

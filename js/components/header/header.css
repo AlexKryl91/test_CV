@@ -1,6 +1,5 @@
 .header {
   background: var(--color-main-bg);
-  /* background: teal; */
   width: 100%;
   max-width: 595px;
   margin: auto;
@@ -44,7 +43,7 @@
 }
 
 .download-btn {
-  padding: 9px 14px 0;
+  padding-inline: 14px;
 }
 
 .hidden {

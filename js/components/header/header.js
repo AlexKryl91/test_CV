@@ -10,7 +10,7 @@ const Header = () => {
         <button class="btn edit-btn" type="button">Edit</button>
         <button class="btn save-btn hidden" type="button">Save</button>
       </div>
-      <a href="${PDF}" download><div class="btn download-btn">Download PDF</div></a>
+      <button id="download" class="btn download-btn" type="button">Download PDF</button>
     </header>
   `;
 };
